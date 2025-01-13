@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  width: 1250px;
+  margin: 0 auto;
+}
+.sm-container {
+  width: 390px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+.round-curve {
+  border-radius: 10px;
+}
+/* .active {
+  color: #76c4eb;
+} */
+input,
+textarea,
+select:focus {
+  outline: none;
+  padding-left: 8px;
+}
+.scroll-to-top {
+  background-color: #0077b6 !important;
+  right: 40px;
+  bottom: 40px;
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 100% !important;
+  width: 50px !important;
+  display: flex;
+  justify-items: center;
+  height: 50px !important;
+  box-shadow: 0 9px 25px 0 #0077b6;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+svg[Attributes] {
+  width: 28;
+  height: 28;
+  fill: rgb(234, 229, 241) !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  padding-left: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0077b6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #033b5a;
+}
+
+nav ul li .a {
+  position: relative;
+}
+nav ul li .a::after {
+  content: " ";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.4s;
+}
+
+nav ul li .a:hover::after,
+nav ul li .a:active::after {
+  width: 70%;
+}
+
+.button {
+  height: 40px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.buttons {
+  height: 40px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.buttonLog {
+  height: 40px;
+  width: 384px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.buttonSign {
+  height: 40px;
+  width: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.button6 {
+  height: 40px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+
+.button7 {
+  height: 40px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.b7 {
+  background: -webkit-linear-gradient(0deg, transparent 50%, white 50%);
+  background-size: 400px 80px;
+  border: 1px solid white;
+}
+.b7:hover {
+  background-position: 200px 0;
+  color: #c2a74e;
+}
+.b1 {
+  background: -webkit-linear-gradient(0deg, transparent 50%, black 50%);
+  background-size: 400px 80px;
+  border: 1px solid black;
+}
+.b1:hover {
+  background-position: 200px 0;
+  color: white;
+}
+
+.bs {
+  background: -webkit-linear-gradient(0deg, transparent 50%, black 50%);
+  background-size: 500px 120px;
+  border: 1px solid black;
+}
+.bs:hover {
+  background-position: 243px 0;
+  color: white;
+}
+.b3 {
+  background: black;
+  color: white;
+  background-size: 800px 80px;
+  border: 1px solid black;
+}
+.b3:hover {
+  background: white;
+  background-position: 400px 0;
+  color: black;
+}
+.b2 {
+  background: -webkit-linear-gradient(0deg, transparent 50%, #f35380 50%);
+  background: #f35380;
+  background-size: 400px 80px;
+  border: 1px solid #f35380;
+}
+
+.b2:hover {
+  background-position: 200px 0;
+  color: white;
+}
+button {
+  transition: background 0.6s ease;
+}
+
+.buttonNLog {
+  height: 40px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+  box-shadow: rgb(47 42 42 / 41%) 0px 5px 15px;
+}
+.buttonBuy {
+  height: 40px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+  color: black;
+}
+.bBuy {
+  background: #c2a74e;
+  background-size: 316px 80px !important;
+  border: 1px solid #c2a74e;
+}
+.bBuy:hover {
+  background: -webkit-linear-gradient(0deg, transparent 60%, #c2a74e 50%);
+  background-position: 300px 0;
+  color: #c2a74e;
+}
+
+.bNLog {
+  background: #c2a74e;
+  background-size: 316px 80px !important;
+  border: 1px solid #c2a74e;
+}
+.bNLog:hover {
+  background: -webkit-linear-gradient(0deg, transparent 60%, #c2a74e 50%);
+  background-position: 300px 0;
+  color: white;
+}
+
+.buttonNLog1 {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+  /* box-shadow: black 0px 5px 15px; */
+}
+.bNLog1 {
+  background: #c2a74e;
+  background-size: 301px 80px !important;
+  border: 1px solid #c2a74e;
+  color: white;
+}
+.bNLog1:hover {
+  background: -webkit-linear-gradient(0deg, transparent 60%, #c2a74e 50%);
+  background-position: 309px 0;
+  color: #c2a74e;
+  font-weight: 600;
+}
+.arrow1 {
+  animation: slide1 1s ease-in-out infinite;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+.carousel-status {
+  visibility: hidden;
+}
+
+/* .care {
+  background-image: url(../../../assets/bannerLogo/banner4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contactCare {
+  background-image: url(../../../assets/bannerLogo/contact-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.scroll-to-top {
+  border-radius: 50% !important;
+  display: flex;
+  color: #c2a74e;
+  justify-content: center;
+  align-items: center;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.overlay {
+  background: rgb(219 176 95 / 74%);
+}
+.overlay_2 {
+  inset: 0;
+}
