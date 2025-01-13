@@ -206,7 +206,7 @@ button {
   justify-content: center;
   align-items: center;
   transition: 0.8s;
-  box-shadow: rgb(47 42 42 / 41%) 0px 5px 15px;
+  box-shadow: rgba(133, 123, 123, 0.41) 0px 3px 8px;
 }
 .buttonBuy {
   height: 40px;

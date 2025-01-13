@@ -5,10 +5,12 @@ import { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
+import { navData } from "./Common/Data";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
+
   //for scroll navbar color change
   useEffect(() => {
     const changeNavbarbg = () => {
@@ -20,33 +22,10 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", changeNavbarbg);
-
     return () => {
       window.removeEventListener("scroll", changeNavbarbg);
     };
   }, []);
-  const navData = [
-    {
-      path: "/",
-      title: "Home",
-    },
-    {
-      path: "/services",
-      title: "Services",
-    },
-    {
-      path: "/shop",
-      title: "Shop",
-    },
-    {
-      path: "/about",
-      title: "About",
-    },
-    {
-      path: "/contact",
-      title: "Contact",
-    },
-  ];
 
   return (
     <nav
@@ -101,48 +80,10 @@ const Navbar = () => {
                 <span className="text-[16px] font-bold text-black text-center border-b">
                   5
                 </span>
-                {/* <div className="overflow-y-auto h-64">
-                  {cartItems?.length > 0 ? (
-                    <>
-                      {" "}
-                      {cartItems?.map((e, i) => {
-                        console.log("e", e);
-                        return (
-                          <div
-                            key={i}
-                            className="grid grid-cols-4 gap-2 border-b py-1">
-                            <div>
-                              <Image
-                                src={e?.img}
-                                alt=""
-                                width={50}
-                                height={30}
-                              />
-                            </div>
-                            <div className="text-black col-span-3">
-                              <p className="text-[12px] font-medium">
-                                {e?.name}
-                              </p>
-                              <p className="text-[12px]">Price: ${e?.price}</p>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </>
-                  ) : (
-                    <p className="text-black text-center font-medium mt-24 text-xl">
-                      No item in your cart ...
-                    </p>
-                  )}
-                </div> */}
 
                 <div className="card-action absolute bottom-2 right-4 left-4">
-                  {/* {cartItems?.length < 0 ? (
-                    ""
-                  ) : ( */}
                   <div className="flex justify-center items-center w-24 ml-20 pb-2 text-[16px] font-bold text-black">
                     <p>Total:</p>
-                    {/* <p className="text-left mr-auto">${totalAmount}</p> */}
                   </div>
 
                   <Link href="/cart" className="block w-full">
@@ -154,60 +95,18 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          {/* {uid ? (
-            <div className="dropdown-end dropdown">
-              <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
-                <div className="w-10 rounded-full">
-                  <Image
-                    alt="user-logo"
-                    title={displayName}
-                    src={
-                      photoURL ||
-                      "https://i.ibb.co/0QZCv5C/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png"
-                    }
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 rounded-full"
-                  />
-                </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu-compact dropdown-content menu rounded-none mt-3 w-48 bg-base-100 p-2 shadow">
-                <li className="mb-2 mt-1 text-center font-semibold">
-                  {displayName}
-                </li>
-                <div className="divider my-0"></div>
-                <li className="mb-2 mx-auto">
-                  <NavLink
-                    href="/profile"
-                    className="button7 b7  text-white rounded-none"
-                    activeClassName="text-blue-500">
-                    <CgProfile className="text-[18px]" /> Profile
-                  </NavLink>
-                </li>
-                <li className="mx-auto">
-                  <button
-                    onClick={handleLogout}
-                    className="buttonNLog bNLog w-full text-white rounded-none">
-                    <MdOutlineLogout className="text-[18px]" /> Logout
-                  </button>
-                </li>
-              </ul>
-            </div>
-          ) : ( */}
+
           <Link
             href="/login"
             className="flex items-center cursor-pointer  gap-2 border border-gray-700 px-2 py-1 buttonNLog bNLog">
             <AiOutlineUser />
             <p className="text-[14px]">Login/Register</p>
           </Link>
-          {/* )} */}
         </div>
         <label className="swap-rotate swap rounded-full h-8 w-8 bg-[#C2A74E] lg:hidden">
           <input
-            // checked={navToggle}
-            // onChange={() => setNavToggle((pre) => !pre)}
+            checked={navToggle}
+            onChange={() => setNavToggle((pre) => !pre)}
             type="checkbox"
           />
           <svg
