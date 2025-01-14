@@ -4,7 +4,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 const OurProduct = () => {
   return (
-    <div className="pt-[150px] grid grid-cols-1 lg:grid-cols-2 gap-32 items-center sm-container lg:container px-10">
+    <div className="pt-[150px] grid grid-cols-1 lg:grid-cols-2 gap-32 items-center sm-container lg:container px-14 pb-[120px]">
       <div>
         <p className="tracking-[0.2rem] text-xl border-b font-bold">
           Our Products
