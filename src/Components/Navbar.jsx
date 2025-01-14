@@ -50,7 +50,7 @@ const Navbar = () => {
         <div
           className={`absolute ${
             navToggle ? "left-0" : "left-[-120%]"
-          } top-[4.5rem] flex w-full flex-col bg-slate-200 pb-3 pt-2 transition-all duration-300 lg:static lg:w-[unset] lg:flex-row lg:justify-center lg:items-center lg:gap-2 lg:font-medium lg:bg-transparent lg:pb-0 lg:pt-0`}>
+          } top-[4.5rem] flex w-full flex-col bg-black pb-3 pt-3 transition-all duration-300 lg:static lg:w-[unset] lg:flex-row lg:justify-center lg:items-center lg:gap-2 lg:font-medium lg:bg-transparent lg:pb-0 lg:pt-0`}>
           <ul className="flex flex-col px-1 gap-5 lg:flex-row mr-3">
             {navData.map(({ path, title }) => (
               <li key={path} className={`mx-auto text-white text-[15px]`}>

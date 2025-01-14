@@ -307,3 +307,23 @@ button {
 .overlay_2 {
   inset: 0;
 }
+.carousel {
+  margin-top: -83px !important;
+}
+.carousel .thumb {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+@media screen and (min-width: 390px) {
+  .button {
+    height: 35px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
