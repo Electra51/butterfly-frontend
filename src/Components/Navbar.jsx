@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav
       style={{
-        boxShadow: "0px 3px 18px #c2a74e2e;",
+        boxShadow: "0px 3px 18px #c2a74e2e",
       }}
       className={`navbar fixed top-0 z-10 ${
         navbar ? "bg-black shadow-lg" : "bg-black bg-opacity-5"
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <NavLink
                   to={path}
                   className={({ isActive }) =>
-                    isActive ? "text-yellow-500 font-bold" : "text-white"
+                    isActive ? "text-yellow-500 font-bold a" : "text-white a"
                   }>
                   {title}
                 </NavLink>

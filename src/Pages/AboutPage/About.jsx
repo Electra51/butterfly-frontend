@@ -9,7 +9,7 @@ import OurPhilosophy from "./OurPhilosophy";
 const About = () => {
   return (
     <div>
-      <CommonHero />
+      <CommonHero type={"about"} title={"About Us"} />
       <AboutHero />
       <OurTeam />
       <AboutVideo />
@@ -20,3 +20,22 @@ const About = () => {
 };
 
 export default About;
+
+// const About = () => {
+//   console.log("Rendering About with props: ", {
+//     type: "about",
+//     title: "About Us",
+//   });
+
+//   return (
+//     <div>
+//       <CommonHero type={"about"} title={"About Us"} />
+//       <AboutHero />
+//       <OurTeam />
+//       <AboutVideo />
+//       <OurPhilosophy />
+//       <OurProduct />
+//     </div>
+//   );
+// };
+// export default About;
