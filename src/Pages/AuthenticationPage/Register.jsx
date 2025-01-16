@@ -6,18 +6,19 @@ import {
   AiOutlineGithub,
 } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthHeader from "../../Components/Common/AuthHeader";
 import { FaImage } from "react-icons/fa6";
 import AuthFooter from "../../Components/Common/AuthFooter";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [show, setShow] = useState({ password: false, correctPass: false });
   const [selectedImage, setSelectedImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
-
   const fileInputRef = useRef(null);
-
+  const navigate = useNavigate();
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -30,9 +31,49 @@ const Register = () => {
     fileInputRef.current.click();
   };
 
-  const handleRegister = () => {
-    console.log("register");
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    if (selectedImage) {
+      formData.append("image", selectedImage);
+    }
+
+    try {
+      const uploadResponse = await axios.post(
+        "http://localhost:8080/api/v1/auth/upload-image",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      const imageUrl = uploadResponse.data.url;
+
+      const registerData = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        password: e.target.password.value,
+        confirmPassword: e.target.confirmPassword.value,
+        profileImage: imageUrl,
+      };
+      console.log("registerData", registerData);
+      const registerResponse = await axios.post(
+        "http://localhost:8080/api/v1/auth/register",
+        registerData
+      );
+
+      if (registerResponse.data.success) {
+        toast.success("Registration Successful!");
+        navigate("/home");
+      } else {
+        toast.success(registerResponse.data.message);
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      toast.error("Registration failed!");
+    }
   };
+
   return (
     <div
       style={{
@@ -166,7 +207,9 @@ const Register = () => {
               />
             </div>
           </div>
-          <button className="h-[35px] !w-[448px] b3 mt-7" type="submit">
+          <button
+            className="h-[35px] !w-[448px] b3 mt-7 font-medium"
+            type="submit">
             Sign Up
           </button>
         </form>
@@ -179,11 +222,7 @@ const Register = () => {
           <button className="buttons bs mt-7 text-[14px]" type="submit">
             Login with Github <AiOutlineGithub className="text-2xl pl-1.5" />
           </button>
-          <button
-            className="buttons bs mt-7 text-[14px]"
-            type="submit"
-            //   onClick={handleGoogleLogin}
-          >
+          <button className="buttons bs mt-7 text-[14px]" type="submit">
             Login with Google <FcGoogle className="text-2xl pl-1.5" />
           </button>
         </div>
