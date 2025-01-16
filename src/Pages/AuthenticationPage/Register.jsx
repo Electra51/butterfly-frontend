@@ -22,12 +22,12 @@ const Register = () => {
     const file = e.target.files[0];
     if (file) {
       setSelectedImage(file);
-      setPreviewImage(URL.createObjectURL(file)); // Generate a preview URL for the image
+      setPreviewImage(URL.createObjectURL(file));
     }
   };
 
   const handleIconClick = () => {
-    fileInputRef.current.click(); // Programmatically open file input
+    fileInputRef.current.click();
   };
 
   const handleRegister = () => {
