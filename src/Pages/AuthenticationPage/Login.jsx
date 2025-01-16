@@ -41,7 +41,7 @@ const Login = () => {
               placeholder="email"
               id="email"
               name="email"
-              className="border border-gray-300 px-3 py-2 rounded-none w-full mt-1"
+              className="border border-gray-300 px-2 py-1.5 text-[14px] rounded-none w-full mt-1 placeholder:text-[14px]"
             />
             {/* {errors.email && (
               <span className="text-red-500 text-base mt-1">
@@ -60,7 +60,7 @@ const Login = () => {
                 placeholder="password"
                 id="password"
                 name="password"
-                className="border border-gray-300 px-3 py-2 rounded-none w-full mt-1"
+                className="border border-gray-300 px-2 py-1.5 text-[14px] rounded-none w-full mt-1 placeholder:text-[14px]"
               />
               {/* {errors.password && (
                 <span className="text-red-500 text-base mt-1">
@@ -84,7 +84,7 @@ const Login = () => {
               Forgot password?
             </a>
           </div>
-          <button className="buttonLog b3 mt-7" type="submit">
+          <button className="h-[35px] !w-[384px] b3 mt-7" type="submit">
             Login
           </button>
           <AuthFooter
