@@ -2,15 +2,18 @@ import React, { useEffect } from "react";
 import logo from "../assets/Logo/new.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState } from "react";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navData } from "./Common/Data";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { TbLogout } from "react-icons/tb";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
-
+  const navigate = useNavigate();
   //for scroll navbar color change
   useEffect(() => {
     const changeNavbarbg = () => {
@@ -26,7 +29,13 @@ const Navbar = () => {
       window.removeEventListener("scroll", changeNavbarbg);
     };
   }, []);
-
+  const userData = JSON.parse(localStorage.getItem("user-token"));
+  console.log("userData", userData?.user);
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    toast.success("logout successfully");
+    navigate("/login");
+  };
   return (
     <nav
       style={{
@@ -102,12 +111,63 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link
-            to="/login"
-            className="flex items-center cursor-pointer  gap-2 border border-gray-700 px-2 py-1 buttonNLog bNLog">
-            <AiOutlineUser />
-            <p className="text-[14px]">Login/Register</p>
-          </Link>
+          {userData ? (
+            <div className="flex justify-normal items-start gap-1">
+              <div className="dropdown dropdown-end">
+                <div tabIndex={0} className="avatar placeholder cursor-pointer">
+                  <div className="flex justify-normal gap-2 items-center">
+                    <div className="h-[36px] w-[36px] rounded-full bg-[#FFF6D8] border border-[#e8cd75] flex justify-center items-center shadow-md">
+                      {userData?.user?.profileImage ? (
+                        <img
+                          src={userData?.user?.profileImage}
+                          alt=""
+                          className="h-full w-full object-fill rounded-full"
+                        />
+                      ) : (
+                        <p>{userData?.user?.name?.substring(0, 1)}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[999] p-2 py-2 shadow dropdown-content text-white rounded-md w-52 bg-[#C2A74E]">
+                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]">
+                    <Link
+                      to="/dashboard/profile"
+                      className="justify-normal gap-2 items-center flex">
+                      <FaRegUserCircle /> Profile
+                    </Link>
+                  </li>
+                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]">
+                    <Link
+                      to="/dashboard/dashboard"
+                      className="justify-normal gap-2 items-center flex">
+                      <LuLayoutDashboard />
+                      Dashboard
+                    </Link>
+                  </li>
+                  <li
+                    className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]"
+                    onClick={handleLogout}>
+                    <Link
+                      to="/"
+                      className="justify-normal gap-2 items-center flex">
+                      <TbLogout />
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="flex items-center cursor-pointer  gap-2 border border-gray-700 px-2 py-1 buttonNLog bNLog">
+              <AiOutlineUser />
+              <p className="text-[14px]">Login/Register</p>
+            </Link>
+          )}
         </div>
         <label className="swap-rotate swap rounded-full h-8 w-8 bg-[#C2A74E] lg:hidden">
           <input
