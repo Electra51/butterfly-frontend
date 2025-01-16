@@ -26,11 +26,11 @@ const Contact = () => {
               <ul className="mt-4">
                 <li className="flex items-center">
                   <div className="bg-[#f1f1f1cf] border h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                    <MdLocationOn className="text-[#86371C]" />
+                    <MdLocationOn className="text-[#C2A74E]" />
                   </div>
                   <a
                     href="javascript:void(0)"
-                    className="text-[#86371C] text-sm ml-4">
+                    className="text-[#C2A74E] text-sm ml-4">
                     <p className="text-[14px] block text-gray-700">Location</p>
                     <span className="font-medium">
                       55 East Birchwood Ave. Brooklyn, New York 11201,
@@ -45,11 +45,11 @@ const Contact = () => {
               <ul className="mt-4">
                 <li className="flex items-center">
                   <div className="bg-[#f1f1f1cf] border h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                    <MdOutlineEmail className="text-[#86371C]" />
+                    <MdOutlineEmail className="text-[#C2A74E]" />
                   </div>
                   <a
                     href="javascript:void(0)"
-                    className="text-[#86371C] text-sm ml-4">
+                    className="text-[#C2A74E] text-sm ml-4">
                     <p className="text-[14px] block text-gray-700">
                       E-Mail Address
                     </p>
@@ -101,7 +101,7 @@ const Contact = () => {
 
             <button
               type="button"
-              className="text-white bg-[#c2a74e] hover:bg-[#c2a74e] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6">
+              className="buttonNLog bNLog text-white hover:text-black tracking-wide text-sm px-4 py-3 w-full !mt-6">
               Send
             </button>
           </form>

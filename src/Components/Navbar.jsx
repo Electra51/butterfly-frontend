@@ -103,7 +103,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            href="/login"
+            to="/login"
             className="flex items-center cursor-pointer  gap-2 border border-gray-700 px-2 py-1 buttonNLog bNLog">
             <AiOutlineUser />
             <p className="text-[14px]">Login/Register</p>
