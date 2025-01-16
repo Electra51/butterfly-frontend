@@ -64,7 +64,7 @@ const Register = () => {
 
       if (registerResponse.data.success) {
         toast.success("Registration Successful!");
-        navigate("/home");
+        navigate("/login");
       } else {
         toast.success(registerResponse.data.message);
       }

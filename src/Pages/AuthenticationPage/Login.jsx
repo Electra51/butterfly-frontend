@@ -6,14 +6,41 @@ import {
   AiOutlineGithub,
 } from "react-icons/ai";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import AuthHeader from "../../Components/Common/AuthHeader";
 import AuthFooter from "../../Components/Common/AuthFooter";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  const handleLogin = () => {
-    console.log("login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      if (response.data.success) {
+        localStorage.setItem("user-token", JSON.stringify(response.data));
+
+        navigate("/dashboard/profile");
+      } else {
+        setError(response.data.message);
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("An error occurred while logging in. Please try again.");
+    }
   };
   return (
     <div
@@ -41,13 +68,10 @@ const Login = () => {
               placeholder="email"
               id="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="border border-gray-300 px-2 py-1.5 text-[14px] rounded-none w-full mt-1 placeholder:text-[14px]"
             />
-            {/* {errors.email && (
-              <span className="text-red-500 text-base mt-1">
-                Please enter a valid email address.
-              </span>
-            )} */}
           </div>
 
           <div className="form-control">
@@ -60,13 +84,10 @@ const Login = () => {
                 placeholder="password"
                 id="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="border border-gray-300 px-2 py-1.5 text-[14px] rounded-none w-full mt-1 placeholder:text-[14px]"
               />
-              {/* {errors.password && (
-                <span className="text-red-500 text-base mt-1">
-                  Please enter a password.
-                </span>
-              )} */}
               {show ? (
                 <AiOutlineEye
                   className="absolute top-4 right-3 text-xl text-gray-600 cursor-pointer"
@@ -93,18 +114,10 @@ const Login = () => {
             head={"Register"}
           />
           <div className="flex justify-normal items-center gap-12 mt-2">
-            <button
-              className="button b1 mt-7 text-[14px] px-1"
-              type="submit"
-              //   onClick={() => signIn("github")}
-            >
+            <button className="button b1 mt-7 text-[14px] px-1" type="submit">
               Login with Github <AiOutlineGithub className="text-2xl" />
             </button>
-            <button
-              className="button b1 mt-7 text-[14px]"
-              type="submit"
-              //   onClick={handleGoogleLogin}
-            >
+            <button className="button b1 mt-7 text-[14px]" type="submit">
               Login with Google <FcGoogle className="text-2xl " />
             </button>
           </div>
