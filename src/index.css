@@ -23,6 +23,11 @@
 .round-curve {
   border-radius: 10px;
 }
+.care {
+  background-image: url(./assets/bannerLogo/banner4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* .active {
   color: #76c4eb;
 } */
