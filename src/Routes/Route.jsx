@@ -7,8 +7,9 @@ import Login from "../Pages/AuthenticationPage/Login";
 import Register from "../Pages/AuthenticationPage/Register";
 import Services from "../Pages/ServicesPage/Services";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import DashboardService from "../Pages/DashboardPage/DashboardService";
 import Dashboard from "../Pages/DashboardPage/Dashboard";
+import Category from "../Pages/DashboardPage/CategoryPage/Category";
+import AddService from "../Pages/DashboardPage/ServicePage/AddService";
 
 export const router = createBrowserRouter([
   {
@@ -44,8 +45,12 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/dashboard/dashboard",
-        element: <DashboardService />,
+        path: "/dashboard/category-list",
+        element: <Category />,
+      },
+      {
+        path: "/dashboard/service-add",
+        element: <AddService />,
       },
     ],
   },

@@ -44,7 +44,7 @@ export const sidebarData = [
     role: 2,
   },
   {
-    link: "/dashboard/category",
+    link: "/dashboard/category-list",
     label: "Category",
     icon: <MdOutlineCategory />,
     role: 1,
