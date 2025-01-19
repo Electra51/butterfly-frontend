@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { IoLogOutOutline } from "react-icons/io5";
-import { toast } from "react-toastify";
-import ConfirmationModal from "./ConfirmationModal";
-import Logo from "./Logo";
 import { sidebarData } from "./Common/Data";
-
+import toast from "react-hot-toast";
+import logo from "../assets/Logo/new.png";
 const Sidebar = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
@@ -18,12 +15,23 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-[270px] bg-[#f3f4fc] h-[100vh] relative">
-      <Link
+    <div className="w-[270px] bg-[#fffbefd9] h-[100vh] relative">
+      {/* <Link
         to="/"
         className="flex items-start justify-start pl-5 gap-2 pt-7 pb-4">
         <Logo />
-      </Link>
+      </Link> */}
+      <div className="w-[62px] lg:w-[140px] flex items-start justify-start pl-7 gap-2 pt-2 pb-2">
+        <Link href="/">
+          <img
+            src={logo}
+            alt="logo"
+            width={100}
+            height={40}
+            className="w-full h-full object-fill"
+          />
+        </Link>
+      </div>
       <div className="mt-2">
         {sidebarData
           .filter(
@@ -36,8 +44,10 @@ const Sidebar = () => {
               <NavLink
                 to={item?.link}
                 className={({ isActive }) =>
-                  `flex items-center pl-5 py-2 text-[14px] hover:bg-[#76C4EB] hover:text-white ${
-                    isActive ? "bg-[#0077B6] text-white" : "text-[#5F5F5F]"
+                  `flex items-center pl-7 py-2 text-[14px] hover:bg-[#C2A74E] hover:border-0 hover:border-r-[6px] hover:border-[#f5d986d9] hover:text-white ${
+                    isActive
+                      ? "bg-[#C2A74E] border-0 border-r-[6px] border-[#f5d986d9] text-white"
+                      : "text-[#5F5F5F] border-0 border-r-[6px] border-[#fffbefd9]"
                   }`
                 }>
                 {item?.icon && <span className="mr-2">{item.icon}</span>}

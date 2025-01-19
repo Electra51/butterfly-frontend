@@ -6,6 +6,9 @@ import Contact from "../Pages/ContactPage/Contact";
 import Login from "../Pages/AuthenticationPage/Login";
 import Register from "../Pages/AuthenticationPage/Register";
 import Services from "../Pages/ServicesPage/Services";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import DashboardService from "../Pages/DashboardPage/DashboardService";
+import Dashboard from "../Pages/DashboardPage/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +31,21 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/dashboard/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/dashboard",
+        element: <DashboardService />,
       },
     ],
   },
