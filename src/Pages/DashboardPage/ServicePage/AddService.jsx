@@ -148,7 +148,7 @@ const AddService = () => {
   };
 
   return (
-    <div className=" bg-white mt-4 w-[1440px]">
+    <div className="bg-white mt-4 w-[1440px]">
       <div className="pl-4">Add New Service</div>
       <form
         className="rounded px-4 pt-6 pb-8 mb-4 mt-2"

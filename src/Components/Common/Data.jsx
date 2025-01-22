@@ -50,7 +50,7 @@ export const sidebarData = [
     role: 1,
   },
   {
-    link: "/dashboard/services",
+    link: "/dashboard/all-service",
     label: "All Services",
     icon: <MdListAlt />,
     role: 1,

@@ -11,6 +11,7 @@ import Dashboard from "../Pages/DashboardPage/Dashboard";
 import Category from "../Pages/DashboardPage/CategoryPage/Category";
 import AddService from "../Pages/DashboardPage/ServicePage/AddService";
 import NewPage from "../Pages/DashboardPage/ServicePage/NewPage";
+import DashboardService from "../Pages/DashboardPage/ServicePage/DashboardService";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ export const router = createBrowserRouter([
         path: "/dashboard/service-add",
         // element: <NewPage />,
         element: <AddService />,
+      },
+      {
+        path: "/dashboard/all-service",
+        // element: <NewPage />,
+        element: <DashboardService />,
       },
     ],
   },
