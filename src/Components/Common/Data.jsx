@@ -56,7 +56,7 @@ export const sidebarData = [
     role: 1,
   },
   {
-    link: "/dashboard/addService",
+    link: "/dashboard/service-add",
     label: "Add Services",
     icon: <RiFileEditLine />,
     role: 1,

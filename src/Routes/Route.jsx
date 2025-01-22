@@ -10,6 +10,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import Dashboard from "../Pages/DashboardPage/Dashboard";
 import Category from "../Pages/DashboardPage/CategoryPage/Category";
 import AddService from "../Pages/DashboardPage/ServicePage/AddService";
+import NewPage from "../Pages/DashboardPage/ServicePage/NewPage";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/service-add",
+        // element: <NewPage />,
         element: <AddService />,
       },
     ],
