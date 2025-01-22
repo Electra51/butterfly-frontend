@@ -16,11 +16,6 @@ const Sidebar = () => {
 
   return (
     <div className="w-[270px] bg-[#fffbefd9] h-[100vh] relative">
-      {/* <Link
-        to="/"
-        className="flex items-start justify-start pl-5 gap-2 pt-7 pb-4">
-        <Logo />
-      </Link> */}
       <div className="w-[62px] lg:w-[140px] flex items-start justify-start pl-7 gap-2 pt-2 pb-2">
         <Link href="/">
           <img
@@ -34,11 +29,7 @@ const Sidebar = () => {
       </div>
       <div className="mt-2">
         {sidebarData
-          .filter(
-            (item) =>
-              !item.role || // If no role specified, show for all users
-              item.role === 1 // Show only for the matching role
-          )
+          .filter((item) => !item.role || item.role === 1)
           .map((item, index) => (
             <div key={index}>
               <NavLink

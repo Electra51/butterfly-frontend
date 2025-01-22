@@ -16,7 +16,7 @@ export default function Pagination({ length, page, setPage }) {
         <button
           key={idx}
           onClick={() => setPage(idx)}
-          className={`w-7 h-7 text-[12px] rounded-md ${
+          className={`w-7 h-5 text-[12px] rounded-none ${
             page === idx
               ? "bg-[#C2A74E] text-background text-white"
               : "border border-[#C2A74E] text-[#C2A74E]"

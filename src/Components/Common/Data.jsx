@@ -1,7 +1,7 @@
 import { FaRegBookmark, FaRegUserCircle } from "react-icons/fa";
 import { FaSection } from "react-icons/fa6";
 import { GoTag } from "react-icons/go";
-import { IoSettingsOutline } from "react-icons/io5";
+import { IoArrowBackSharp, IoSettingsOutline } from "react-icons/io5";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdListAlt, MdOutlineCategory } from "react-icons/md";
 import { PiUserListBold } from "react-icons/pi";
@@ -83,5 +83,10 @@ export const sidebarData = [
     link: "/dashboard/settings",
     label: "Settings",
     icon: <IoSettingsOutline />,
+  },
+  {
+    link: "/",
+    label: "Back To Home",
+    icon: <IoArrowBackSharp />,
   },
 ];
