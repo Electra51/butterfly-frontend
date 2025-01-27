@@ -9,6 +9,7 @@ import BookingHeader from "./BookingHeader";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import toast from "react-hot-toast";
+import ConfirmationModal from "../../Components/Common/ConfirmationModal";
 
 const BookingPerService = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const BookingPerService = () => {
   const [selected, setSelected] = useState(null);
   const [timeValue, setTimeValue] = useState("00:00");
   const userData = JSON.parse(localStorage.getItem("user-token"));
-
+  const [visible, setVisible] = useState(false);
   //get id wish service
   const getIdWishService = async () => {
     setLoading(true);
@@ -62,7 +63,7 @@ const BookingPerService = () => {
       setValue((prev) => ({
         ...prev,
         serviceName: idWishService?.name || "",
-        serviceImg: idWishService?.detail[0]?.img || "",
+        serviceImg: idWishService?.detail?.[0]?.img || "",
         category: idWishService?.category?.name || "",
         price: idWishService?.price || "",
         discount: idWishService?.discount || "",
@@ -76,7 +77,7 @@ const BookingPerService = () => {
       }));
     }
   }, [idWishService]);
-
+  console.log("idWishService", idWishService);
   const handleTimeChange = (e) => {
     const time = e.target.value;
     setTimeValue(time);
@@ -103,7 +104,7 @@ const BookingPerService = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("v", value);
+    setLoading(true); // Set loading to true before API call
     try {
       const response = await axios.post(
         "http://localhost:8080/api/v1/service/booking",
@@ -118,26 +119,17 @@ const BookingPerService = () => {
 
       if (response.status === 200) {
         toast.success("Booking this service successfully!");
-        setValue({
-          serviceName: "",
-          serviceImg: "",
-          category: "",
-          price: "",
-          discount: "",
-          totalPrice: "",
-          clientName: "",
-          email: "",
-          age: "",
-          address: "",
-          message: "",
-          appointmentDate: null,
-          paymentMethod: "",
-        });
+        setVisible(true); // Show modal only on successful booking
+        // Reset form and other states
+        setValue({ ...value });
         setStep(1);
       }
     } catch (error) {
       console.error("API Error:", error);
       toast.error("Failed to book the service. Please try again!");
+    } finally {
+      setLoading(false); // Always set loading to false
+      setVisible(true);
     }
   };
 
@@ -148,7 +140,6 @@ const BookingPerService = () => {
   const prevStep = () => {
     setStep((prevStep) => prevStep - 1);
   };
-  console.log("idWishService", idWishService);
 
   return (
     <div>
@@ -246,7 +237,7 @@ const BookingPerService = () => {
                       <button
                         type="button"
                         onClick={nextStep}
-                        className="px-3 py-1.5 bg-blue-500 text-white mr-0 text-[14px] flex justify-end gap-1 items-center">
+                        className="px-3 py-1.5 bg-[#C2A74E] text-white mr-0 text-[14px] flex justify-end gap-1 items-center">
                         Next
                         <MdKeyboardArrowRight className="text-[18px]" />
                       </button>
@@ -255,7 +246,11 @@ const BookingPerService = () => {
                     <button
                       type="submit"
                       className="px-3 py-1.5 bg-green-500 text-white mr-0 text-[14px] flex justify-normal gap-1 items-center mt-2">
-                      Submit
+                      {loading ? (
+                        <span className="loading loading-spinner loading-xs"></span>
+                      ) : (
+                        "Submit"
+                      )}
                     </button>
                   )}
                 </div>
@@ -265,6 +260,10 @@ const BookingPerService = () => {
           <BookingLeft />
         </div>
       </div>
+
+      {visible && (
+        <ConfirmationModal visible={visible} setVisible={setVisible} />
+      )}
     </div>
   );
 };

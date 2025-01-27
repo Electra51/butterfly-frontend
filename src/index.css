@@ -386,3 +386,18 @@ button {
 .rdp-tfoot tr td {
   padding-top: 20px !important;
 }
+.modal-box {
+  border-radius: 2px !important;
+}
+.modal-action {
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: center !important;
+}
+.modal-action button {
+  border-radius: 2px;
+  padding: 4px 12px !important;
+  background-color: rgb(22, 171, 22) !important;
+  color: white !important;
+  margin: 5px 0px;
+}
