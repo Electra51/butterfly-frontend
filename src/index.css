@@ -11,11 +11,11 @@
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
-.container {
-  width: 1200px;
+.container-div {
+  width: 1220px;
   margin: 0 auto;
 }
-.sm-container {
+.container-div-sm {
   width: 390px;
   margin: 0 auto;
   /* border: 1px solid red; */
@@ -335,4 +335,54 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   height: 700px;
+}
+.rdp {
+  margin: 0 !important;
+}
+.rdp-caption_label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+.rdp-nav_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px !important;
+  height: 20px !important;
+  padding: 0.25em;
+  border-radius: 100%;
+}
+.rdp-caption {
+  border-bottom: 1px solid rgb(246, 245, 245);
+  background: rgba(246, 245, 245, 0.888);
+  padding: 0 5px !important;
+}
+.rdp-head {
+  background: rgb(255, 250, 250);
+  border: 1px solid rgba(246, 245, 245, 0.888) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+.rdp-tbody {
+  background: rgb(255, 250, 250);
+  border: 1px solid rgba(246, 245, 245, 0.888) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+.rdp-cell {
+  height: 30px !important;
+  width: 30px !important;
+}
+.rdp-months {
+  display: block;
+}
+.rdp-months {
+  width: 100% !important;
+}
+.rdp-tfoot {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+.rdp-tfoot tr td {
+  padding-top: 20px !important;
 }

@@ -2,7 +2,7 @@ import imgAbout from "../../assets/bannerLogo/aboutBanner.jpg";
 
 const AboutHero = () => {
   return (
-    <div className="pt-[120px] lg:pt-[150px] grid grid-cols-1 lg:grid-cols-2 gap-10 items-center sm-container lg:container px-14">
+    <div className="pt-[120px] lg:pt-[150px] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center sm:container-div-sm lg:container-div container-div px-10">
       <div>
         <img src={imgAbout} alt="about Image" priority />
       </div>

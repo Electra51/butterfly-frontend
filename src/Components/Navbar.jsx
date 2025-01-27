@@ -30,7 +30,7 @@ const Navbar = () => {
     };
   }, []);
   const userData = JSON.parse(localStorage.getItem("user-token"));
-  console.log("userData", userData?.user);
+
   const handleLogout = () => {
     localStorage.removeItem("auth");
     toast.success("logout successfully");
@@ -44,7 +44,7 @@ const Navbar = () => {
       className={`navbar fixed top-0 z-10 ${
         navbar ? "bg-black shadow-lg" : "bg-black bg-opacity-5"
       } text-white lg:pr-3`}>
-      <div className="sm-container lg:container flex items-center justify-between px-4 sm:px-6 lg:px-10">
+      <div className="container-div flex items-center justify-between px-4 sm:px-6">
         <div className="w-[92px] lg:w-[140px]">
           <Link href="/">
             <img

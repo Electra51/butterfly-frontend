@@ -67,7 +67,12 @@ const ServiceCard = ({ item }) => {
           <p className="text-[14px]">{item.detail[0].ans1}</p>
         )}
 
-        <button className="buttonNLog1 bNLog1">Book Now</button>
+        <Link
+          to={`/bookings/${item._id}`}
+          className="buttonNLog1 bNLog1"
+          style={{ zIndex: 99 }}>
+          Book Now
+        </Link>
       </div>
     </div>
   );

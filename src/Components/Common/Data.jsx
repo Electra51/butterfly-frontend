@@ -1,9 +1,13 @@
 import { FaRegBookmark, FaRegUserCircle } from "react-icons/fa";
-import { FaSection } from "react-icons/fa6";
-import { GoTag } from "react-icons/go";
 import { IoArrowBackSharp, IoSettingsOutline } from "react-icons/io5";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { MdListAlt, MdOutlineCategory } from "react-icons/md";
+import {
+  MdListAlt,
+  MdLocationOn,
+  MdOutlineCategory,
+  MdOutlineEmail,
+  MdPhone,
+} from "react-icons/md";
 import { PiUserListBold } from "react-icons/pi";
 import { RiFileEditLine } from "react-icons/ri";
 import { TbShoppingCartCopy } from "react-icons/tb";
@@ -88,5 +92,26 @@ export const sidebarData = [
     link: "/",
     label: "Back To Home",
     icon: <IoArrowBackSharp />,
+  },
+];
+
+export const contactInfo = [
+  {
+    type: "email",
+    title: "E-Mail Address",
+    icon: MdOutlineEmail,
+    value: "info@example.com",
+  },
+  {
+    type: "phone",
+    title: "Phone Number",
+    icon: MdPhone,
+    value: "+1 (555) 123-4567",
+  },
+  {
+    type: "address",
+    title: "Address",
+    icon: MdLocationOn,
+    value: "55 East Birchwood Ave. Brooklyn, New York 11201",
   },
 ];

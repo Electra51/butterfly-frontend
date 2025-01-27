@@ -3,6 +3,7 @@ import BreadCrumb from "./BreadCrumb";
 import imgforAbout from "../../assets/bannerLogo/contact-banner.jpg";
 import imgforContact from "../../assets/bannerLogo/contacts-page.jpg";
 import imgforService from "../../assets/bannerLogo/serviceBanner.jpg";
+import imgforBooking from "../../assets/bannerLogo/BookingBanner.jpg";
 
 const CommonHero = ({ type, title }) => {
   const backgroundImage =
@@ -12,6 +13,8 @@ const CommonHero = ({ type, title }) => {
       ? imgforContact
       : type === "services"
       ? imgforService
+      : type === "booking"
+      ? imgforBooking
       : null;
 
   return (
@@ -36,6 +39,8 @@ const CommonHero = ({ type, title }) => {
                 ? "Contact"
                 : type === "services"
                 ? "Services"
+                : type === "booking"
+                ? "Booking Appointment"
                 : ""
             }
             link={
@@ -45,6 +50,8 @@ const CommonHero = ({ type, title }) => {
                 ? "/contact"
                 : type === "contact"
                 ? "/services"
+                : type === "booking"
+                ? "/booking"
                 : "/"
             }
           />
