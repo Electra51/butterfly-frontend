@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <div className="w-[270px] bg-[#fffbefd9] h-[100vh] relative">
-      <div className="w-[62px] lg:w-[140px] flex items-start justify-start pl-7 gap-2 pt-2 pb-2">
+      {/* <div className="w-[62px] lg:w-[140px] flex items-start justify-start pl-7 gap-2 pt-2 pb-2">
         <Link href="/">
           <img
             src={logo}
@@ -26,7 +26,7 @@ const Sidebar = () => {
             className="w-full h-full object-fill"
           />
         </Link>
-      </div>
+      </div> */}
       <div className="mt-2">
         {sidebarData
           .filter((item) => !item.role || item.role === 1)
