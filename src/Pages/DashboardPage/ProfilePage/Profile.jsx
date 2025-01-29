@@ -135,7 +135,7 @@ const Profile = () => {
         <div className="m-2">
           <CommonDashboardHeader title={"User Details"} />
           {userDetails ? (
-            <div className="max-w-[1000px] my-4 px-1">
+            <div className="max-w-[1000px] my-6 px-1">
               {isEditMode ? (
                 <div className="py-2">
                   <div className="rounded-sm flex justify-normal items-start gap-10">
