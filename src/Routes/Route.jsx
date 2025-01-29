@@ -16,6 +16,8 @@ import BookingPerService from "../Pages/ServicesPage/BookingPerService";
 import Profile from "../Pages/DashboardPage/ProfilePage/Profile";
 import Reservation from "../Pages/DashboardPage/ReservationPage/Reservation";
 import Setting from "../Pages/DashboardPage/SettingPage/Setting";
+import ProductCategory from "../Pages/DashboardPage/ProductCategoryPage/ProductCategory";
+import AddProductCategory from "../Pages/DashboardPage/ProductCategoryPage/AddProductCategory";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +69,11 @@ export const router = createBrowserRouter([
         path: "/dashboard/all-service",
         element: <DashboardService />,
       },
+      {
+        path: "/dashboard/product-category",
+        element: <ProductCategory />,
+      },
+
       {
         path: "/dashboard/profile",
         element: <Profile />,

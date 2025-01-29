@@ -1,15 +1,17 @@
+import { BiCategoryAlt, BiPurchaseTagAlt } from "react-icons/bi";
 import { FaRegBookmark, FaRegUserCircle } from "react-icons/fa";
 import { IoArrowBackSharp, IoSettingsOutline } from "react-icons/io5";
 import { LuLayoutDashboard } from "react-icons/lu";
 import {
   MdListAlt,
   MdLocationOn,
+  MdOutlineAddchart,
   MdOutlineCategory,
   MdOutlineEmail,
   MdPhone,
 } from "react-icons/md";
 import { PiUserListBold } from "react-icons/pi";
-import { RiFileEditLine } from "react-icons/ri";
+import { RiFileEditLine, RiProductHuntLine } from "react-icons/ri";
 import { TbShoppingCartCopy } from "react-icons/tb";
 
 export const navData = [
@@ -72,9 +74,27 @@ export const sidebarData = [
     role: 1,
   },
   {
+    link: "/dashboard/product-category",
+    label: "Product Category",
+    icon: <BiCategoryAlt />,
+    role: 1,
+  },
+  {
+    link: "/dashboard/add-product",
+    label: "Add Product",
+    icon: <MdOutlineAddchart />,
+    role: 1,
+  },
+  {
+    link: "/dashboard/products",
+    label: "Products",
+    icon: <TbShoppingCartCopy />,
+    role: 1,
+  },
+  {
     link: "/dashboard/orders",
     label: "Order's",
-    icon: <TbShoppingCartCopy />,
+    icon: <BiPurchaseTagAlt />,
     role: 1,
   },
   {
