@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 
 const DashboardNavbar = () => {
   const location = useLocation();
-  console.log("location", location?.pathname);
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("user-token");
