@@ -18,6 +18,7 @@ import Reservation from "../Pages/DashboardPage/ReservationPage/Reservation";
 import Setting from "../Pages/DashboardPage/SettingPage/Setting";
 import ProductCategory from "../Pages/DashboardPage/ProductCategoryPage/ProductCategory";
 import AddProductCategory from "../Pages/DashboardPage/ProductCategoryPage/AddProductCategory";
+import AddProduct from "../Pages/DashboardPage/AddProductPage/AddProduct";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/product-category",
         element: <ProductCategory />,
+      },
+      {
+        path: "/dashboard/add-product",
+        element: <AddProduct />,
       },
 
       {

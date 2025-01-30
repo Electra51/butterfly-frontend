@@ -6,9 +6,10 @@ import CommonDashboardHeader from "../../../Components/Common/CommonDashboardHea
 
 const AddProductCategory = ({ getCategoryData }) => {
   const [value, setValue] = useState({ name: "" });
-
+  const [loading, setLoading] = useState(false);
   const handleCategoryAdd = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const data = { name: value.name };
     try {
       const response = await axios.post(
@@ -30,6 +31,8 @@ const AddProductCategory = ({ getCategoryData }) => {
       }
     } catch (error) {
       console.error("Error:", error.message);
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -56,11 +59,19 @@ const AddProductCategory = ({ getCategoryData }) => {
         </div>
 
         <div className="flex items-center justify-start">
-          <button
-            className="bg-[#C2A74E] gap-1 hover:bg-[#C2A74E] text-white text-[14px] font-medium py-1.5 px-6 w-full focus:outline-none focus:shadow-outline flex justify-normal items-center"
-            type="submit">
-            <FiPlus className="text-white" /> Add New Category
-          </button>
+          {loading ? (
+            <button
+              className="bg-[#C2A74E] gap-1 hover:bg-[#C2A74E] text-white text-[14px] font-medium py-1.5 px-6 w-full focus:outline-none focus:shadow-outline flex justify-center items-center"
+              type="submit">
+              Loading...
+            </button>
+          ) : (
+            <button
+              className="bg-[#C2A74E] gap-1 hover:bg-[#C2A74E] text-white text-[14px] font-medium py-1.5 px-6 w-full focus:outline-none focus:shadow-outline flex justify-normal items-center"
+              type="submit">
+              <FiPlus className="text-white" /> Add New Category
+            </button>
+          )}
         </div>
       </form>
     </div>
