@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../../../Components/Common/Loader";
-import AddCategory from "./AddProductCategory";
 import axios from "axios";
 import CommonDashboardHeader from "../../../Components/Common/CommonDashboardHeader";
 import AddProductCategory from "./AddProductCategory";
@@ -13,7 +12,7 @@ const ProductCategory = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/product-category/product-categories"
+        `${import.meta.env.VITE_API_URL}/product-category/product-categories`
       );
 
       if (response.status === 200) {

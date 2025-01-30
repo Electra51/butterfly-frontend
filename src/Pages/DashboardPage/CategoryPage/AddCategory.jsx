@@ -11,7 +11,7 @@ const AddCategory = ({ getCategoryData }) => {
     const data = { name: value.name };
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/category/categories",
+        `${import.meta.env.VITE_API_URL}/category/categories`,
         data,
         {
           headers: {

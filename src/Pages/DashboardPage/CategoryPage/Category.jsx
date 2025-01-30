@@ -11,7 +11,7 @@ const Category = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/category/categories"
+        `${import.meta.env.VITE_API_URL}/category/categories`
       );
 
       if (response.status === 200) {

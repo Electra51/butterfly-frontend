@@ -11,7 +11,7 @@ const AddService = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/category/categories"
+        `${import.meta.env.VITE_API_URL}/category/categories`
       );
 
       if (response.status === 200) {
@@ -86,7 +86,7 @@ const AddService = () => {
             imageFormData.append("image", detailItem.img);
 
             const imageUploadResponse = await axios.post(
-              "http://localhost:8080/api/v1/service/upload-image",
+              `${import.meta.env.VITE_API_URL}/service/upload-image`,
               imageFormData,
               {
                 headers: {
@@ -108,7 +108,7 @@ const AddService = () => {
         const imageFormData = new FormData();
         imageFormData.append("image", iconImage);
         const imageUploadResponse = await axios.post(
-          "http://localhost:8080/api/v1/service/upload-image",
+          `${import.meta.env.VITE_API_URL}/service/upload-image`,
           imageFormData,
           {
             headers: {
@@ -134,7 +134,7 @@ const AddService = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:8080/api/v1/service/service",
+        `${import.meta.env.VITE_API_URL}/service/service`,
         servicesData
       );
       toast.success("Service added successfully!");

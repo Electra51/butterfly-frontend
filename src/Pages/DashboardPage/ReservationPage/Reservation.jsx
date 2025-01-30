@@ -12,7 +12,7 @@ const Reservation = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/service/booking"
+        `${import.meta.env.VITE_API_URL}/service/booking`
       );
 
       if (response.status === 200) {

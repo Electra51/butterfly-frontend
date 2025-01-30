@@ -12,7 +12,7 @@ const DashboardService = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/v1/service/service"
+        `${import.meta.env.VITE_API_URL}/service/service`
       );
 
       if (response.status === 200) {

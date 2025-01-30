@@ -23,7 +23,7 @@ const Profile = () => {
     const getUserDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/v1/auth/user/${userData?.user?.email}`
+          `${import.meta.env.VITE_API_URL}/auth/user/${userData?.user?.email}`
         );
         setUserDetails(response.data.user);
         setEditedUserDetails(response.data.user);
@@ -74,7 +74,7 @@ const Profile = () => {
         formData.append("image", selectedImage);
 
         const uploadResponse = await axios.post(
-          "http://localhost:8080/api/v1/auth/upload-image",
+          `${import.meta.env.VITE_API_URL}/auth/upload-image`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -98,7 +98,7 @@ const Profile = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:8080/api/v1/auth/user/${userData?.user?.email}`,
+        `${import.meta.env.VITE_API_URL}/auth/user/${userData?.user?.email}`,
         updatedUser,
         {
           headers: { "Content-Type": "application/json" },
