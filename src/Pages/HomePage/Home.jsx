@@ -7,6 +7,7 @@ import FeaturedService from "./FeaturedService";
 import FeaturedProduct from "./FeaturedProduct";
 import Testimonials from "./Testimonials";
 import ImageGallery from "./ImageGallery";
+import CompanyLogo from "./CompanyLogo";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <FeaturedProduct />
       <Testimonials />
       <ImageGallery />
+      <CompanyLogo />
     </div>
   );
 };

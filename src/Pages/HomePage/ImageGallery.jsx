@@ -14,7 +14,6 @@ import gallaryImage10 from "../../assets/GallaryImage/images9.jpg";
 import gallaryImage11 from "../../assets/GallaryImage/images10.jpg";
 import gallaryImage12 from "../../assets/GallaryImage/images11.jpg";
 import gallaryImage13 from "../../assets/GallaryImage/images12.jpg";
-import CommonDashboardHeader from "../../Components/Common/CommonDashboardHeader";
 
 const ImageGallery = () => {
   const photos = [
