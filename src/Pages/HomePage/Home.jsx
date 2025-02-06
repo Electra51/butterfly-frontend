@@ -6,6 +6,7 @@ import Philosophy from "./Philosophy";
 import FeaturedService from "./FeaturedService";
 import FeaturedProduct from "./FeaturedProduct";
 import Testimonials from "./Testimonials";
+import ImageGallery from "./ImageGallery";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Philosophy />
       <FeaturedProduct />
       <Testimonials />
+      <ImageGallery />
     </div>
   );
 };
