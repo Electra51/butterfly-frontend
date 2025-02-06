@@ -13,7 +13,7 @@ const AddProductCategory = ({ getCategoryData }) => {
     const data = { name: value.name };
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/product-category/product-categories`,
+        `${import.meta.env.VITE_API_URL}/product-category/categories`,
         data,
         {
           headers: {

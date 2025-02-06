@@ -12,7 +12,7 @@ const ProductCategory = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/product-category/product-categories`
+        `${import.meta.env.VITE_API_URL}/product-category/categories`
       );
 
       if (response.status === 200) {
@@ -29,7 +29,7 @@ const ProductCategory = () => {
   useEffect(() => {
     getCategoryData();
   }, []);
-
+  console.log("categories", categories);
   return (
     <div>
       <div className="grid grid-cols-3 gap-4 w-[1440px]">

@@ -87,7 +87,7 @@ export const sidebarData = [
   },
   {
     link: "/dashboard/products",
-    label: "Products",
+    label: "All Product",
     icon: <TbShoppingCartCopy />,
     role: 1,
   },
