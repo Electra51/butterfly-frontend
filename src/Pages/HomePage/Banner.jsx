@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <Carousel autoPlay infiniteLoop showIndicators={false}>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img3}
@@ -21,7 +21,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="absolute top-[27%] lg:top-[35%] right-[10%] lg:right-[13%]">
+        <div className="absolute top-[27%] lg:top-[35%] right-[10%] lg:right-[17%]">
           <div className="flex flex-col justify-center items-center my-auto mt-20">
             <p className="text-[#100C08] tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               Make Nail Gorgeous
@@ -36,7 +36,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img1}
@@ -44,7 +44,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="backdrop-blur-sm absolute top-[40%] lg:top-[37%] right-[17%] lg:right-[13%] bg-white bg-opacity-30 h-[160px] lg:h-72 w-[280px] lg:w-[510px]">
+        <div className="backdrop-blur-sm absolute top-[40%] lg:top-[37%] right-[17%] lg:right-[17%] bg-white bg-opacity-30 h-[160px] lg:h-72 w-[280px] lg:w-[510px]">
           <div className="flex flex-col justify-center items-center my-auto mt-6 lg:mt-20">
             <p className="text-[#100C08] tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               You Look Good
@@ -59,7 +59,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img2}
@@ -67,7 +67,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="backdrop-blur-sm absolute top-[27%] lg:top-[35%] left-[22%] lg:left-[13%]">
+        <div className="backdrop-blur-sm absolute top-[27%] lg:top-[35%] left-[22%] lg:left-[18%]">
           <div className="flex flex-col justify-start items-center lg:items-start my-auto mt-20 text-white">
             <p className="text-gray-200 tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               We Make Best Spa
@@ -83,7 +83,7 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img4}
@@ -91,7 +91,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="absolute top-[26%] lg:top-[35%] left-[12%] lg:left-[13%]">
+        <div className="absolute top-[26%] lg:top-[35%] left-[12%] lg:left-[18%]">
           <div className="flex flex-col justify-start items-center lg:items-start my-auto mt-20">
             <p className="text-[#100C08] tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               We Make Best Makeup
@@ -106,7 +106,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img5}
@@ -114,7 +114,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="absolute top-[27%] lg:top-[35%] left-[25%] lg:left-[13%]">
+        <div className="absolute top-[27%] lg:top-[35%] left-[25%] lg:left-[18%]">
           <div className="flex flex-col justify-start items-center lg:items-start my-auto mt-20">
             <p className="text-[#100C08] tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               Silky Hair
@@ -129,7 +129,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img6}
@@ -137,7 +137,7 @@ const Banner = () => {
           priority
           className="w-full lg:h-full h-[420px]"
         />
-        <div className="absolute top-[35%] right-[26%] lg:right-[13%]">
+        <div className="absolute top-[35%] right-[26%] lg:right-[17%]">
           <div className="flex flex-col justify-start items-center lg:items-start my-auto mt-6 lg:mt-20">
             <p className="text-[#100C08] tracking-[0.15rem] lg:tracking-[0.3rem] text-[14px] lg:text-[16px]">
               Products For
@@ -154,7 +154,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-10">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <img
           src={img7}

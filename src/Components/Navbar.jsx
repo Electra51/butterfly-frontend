@@ -2,19 +2,20 @@ import React, { useEffect } from "react";
 import logo from "../assets/Logo/new.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState } from "react";
-import { FaRegHeart, FaRegUserCircle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { navData } from "./Common/Data";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { TbLogout } from "react-icons/tb";
-import toast from "react-hot-toast";
+import useLogout from "../utils/authUtils";
+import { userData } from "../utils/userDatafromLocalStorageUtils";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
-  const navigate = useNavigate();
-  //for scroll navbar color change
+  const handleLogout = useLogout();
+
   useEffect(() => {
     const changeNavbarbg = () => {
       if (window.scrollY >= 80) {
@@ -29,13 +30,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", changeNavbarbg);
     };
   }, []);
-  const userData = JSON.parse(localStorage.getItem("user-token"));
 
-  const handleLogout = () => {
-    localStorage.removeItem("auth");
-    toast.success("logout successfully");
-    navigate("/login");
-  };
   return (
     <nav
       style={{
@@ -60,7 +55,7 @@ const Navbar = () => {
           className={`absolute ${
             navToggle ? "left-0" : "left-[-120%]"
           } top-[4.5rem] flex w-full flex-col bg-black pb-3 pt-3 transition-all duration-300 lg:static lg:w-[unset] lg:flex-row lg:justify-center lg:items-center lg:gap-2 lg:font-medium lg:bg-transparent lg:pb-0 lg:pt-0`}>
-          <ul className="flex flex-col px-1 gap-5 lg:flex-row mr-3">
+          <ul className="flex flex-col px-1 gap-5 lg:flex-row mr-1">
             {navData.map(({ path, title }) => (
               <li key={path} className="mx-auto text-white text-[15px]">
                 <NavLink
@@ -74,17 +69,14 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="indicator">
-            <FaRegHeart className="cursor-pointer text-[22px] font-medium" />
-            <span className="badge badge-sm indicator-item bg-red-500 text-white dark:text-gray-300">
-              60
-            </span>
-          </div>
-
-          <div className="dropdown-end dropdown lg:mr-2 mt-2 px-2">
+          <div className="dropdown-end dropdown mt-5 lg:mt-2 px-2 mx-auto lg:mx-auto">
             <label tabIndex={0} className="mx-2 mt-1">
               <div className="indicator">
+                <span className="pr-1 lg:hidden flex">Cart</span>
                 <AiOutlineShoppingCart className="cursor-pointer text-[22px] font-medium" />
+                <span className="badge badge-sm indicator-item bg-red-500 text-white dark:text-gray-300">
+                  60
+                </span>
               </div>
             </label>
             <div
@@ -112,7 +104,7 @@ const Navbar = () => {
           </div>
 
           {userData ? (
-            <div className="flex justify-normal items-start gap-1">
+            <div className="flex justify-center lg:justify-normal items-start gap-1 px-2 mt-5 lg:mt-0">
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} className="avatar placeholder cursor-pointer">
                   <div className="flex justify-normal gap-2 items-center">
@@ -131,15 +123,15 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="mt-3 z-[999] p-2 py-2 shadow dropdown-content text-white rounded-md w-52 bg-[#C2A74E]">
-                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]">
+                  className="z-[999] relative p-2 py-2 shadow dropdown-content text-white rounded-sm w-52 bg-[#C2A74E]">
+                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[2px]">
                     <Link
                       to="/dashboard/profile"
                       className="justify-normal gap-2 items-center flex">
                       <FaRegUserCircle /> Profile
                     </Link>
                   </li>
-                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]">
+                  <li className="hover:bg-[#84702c] px-5 py-1 rounded-[2px]">
                     <Link
                       to="/dashboard/dashboard"
                       className="justify-normal gap-2 items-center flex">
@@ -148,7 +140,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    className="hover:bg-[#84702c] px-5 py-1 rounded-[4px]"
+                    className="hover:bg-[#84702c] px-5 py-1 rounded-[2px]"
                     onClick={handleLogout}>
                     <Link
                       to="/"

@@ -12,13 +12,12 @@
   box-sizing: border-box;
 }
 .container-div {
-  width: 1220px;
+  width: 1300px;
   margin: 0 auto;
 }
 .container-div-sm {
   width: 390px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 .round-curve {
   border-radius: 10px;
@@ -282,18 +281,6 @@ button {
   visibility: hidden;
 }
 
-/* .care {
-  background-image: url(../../../assets/bannerLogo/banner4.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.contactCare {
-  background-image: url(../../../assets/bannerLogo/contact-banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
 .scroll-to-top {
   border-radius: 50% !important;
   display: flex;
@@ -311,13 +298,17 @@ button {
   inset: 0;
 }
 .carousel {
-  margin-top: -83px !important;
+  margin-top: -93px !important;
 }
 .carousel .thumb {
   width: 40px !important;
-  height: 40px !important;
+  height: 30px !important;
 }
 
+/* .carousel .thumbs-wrapper {
+  margin-left: 312px !important;
+  overflow: hidden !important;
+} */
 @media screen and (min-width: 390px) {
   .button {
     height: 35px;

@@ -1,4 +1,3 @@
-"use client";
 import { MdPhoneInTalk } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
