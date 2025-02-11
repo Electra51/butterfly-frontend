@@ -2,7 +2,6 @@ import { FaRegEye, FaHeart, FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ item }) => {
-  console.log("eeee", item);
   return (
     <div
       className="group bg-base-100 shadow-xl transform group-hover:-translate-y-1 duration-300 relative"

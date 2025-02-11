@@ -25,12 +25,12 @@ const FeaturedProduct = () => {
     <div className="mt-32 flex flex-col justify-center max-w-[18rem] lg:max-w-6xl mx-auto">
       <div className="flex justify-center items-center">
         <p className="tracking-[0.1rem] text-2xl border-b w-72 lg:w-80 text-center font-bold text-black">
-          Featured Services
+          Featured Products
         </p>
       </div>
-      <Link to="/services">
+      <Link to="/product">
         <p className="text-center text-[#C2A74E] hover:underline hover:text-blue-500 font-medium cursor-pointer text-[16px] mt-2 w-52 mx-auto">
-          See All Services
+          See All Products
         </p>
       </Link>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10">

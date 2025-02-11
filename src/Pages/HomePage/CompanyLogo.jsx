@@ -51,7 +51,7 @@ const CompanyLogo = () => {
     ],
   };
   return (
-    <div className="mt-[160px] bg-[#fff9e6] py-32">
+    <div className="mt-[160px] bg-[#fff9e6] py-20 lg:py-32">
       <Slider {...settings} className="">
         <div>
           <div className="h-32 w-32 flex justify-center items-center mt-5 mb-0">

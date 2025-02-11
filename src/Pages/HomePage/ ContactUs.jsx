@@ -16,7 +16,7 @@ const ContactUs = () => {
     <div className="text-white text-justify relative mt-32 max-w-8xl mx-auto">
       <div className="care max-w-6xl relative">
         <div className="overlay overlay_2">
-          <div className="max-w-lg px-5 py-20 mx-auto">
+          <div className="max-w-md lg:max-w-lg px-5 py-20 mx-auto">
             <p className="text-white mb-2 font-medium text-[14px]">
               Contact With Us
             </p>
@@ -63,7 +63,106 @@ const ContactUs = () => {
         </div>
       </div>
       <div
-        className="absolute top-[-35px] right-0 w-[40%] bg-[#C2A74E]"
+        className="hidden lg:block absolute top-[-35px] right-0 w-[40%] bg-[#C2A74E]"
+        style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}>
+        {" "}
+        <form onSubmit={handleSubmit(onSubmit)} className="px-10 py-14">
+          <div className="form-control">
+            <label htmlFor="email" className="label label-text">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="email"
+              id="email"
+              name="email"
+              className="input input-bordered rounded-none w-full"
+              autoComplete="email"
+              {...register("email", {
+                required: true,
+                pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
+              })}
+            />
+            {errors.email && (
+              <span className="text-red-500 text-base mt-1">
+                Please enter a valid email address.
+              </span>
+            )}
+          </div>
+          <div className="form-control mt-2">
+            <label htmlFor="email" className="label label-text">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="email"
+              id="email"
+              name="email"
+              className="input input-bordered rounded-none w-full"
+              autoComplete="email"
+              {...register("email", {
+                required: true,
+                pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
+              })}
+            />
+            {errors.email && (
+              <span className="text-red-500 text-base mt-1">
+                Please enter a valid email address.
+              </span>
+            )}
+          </div>
+          <div className="form-control mt-2">
+            <label htmlFor="email" className="label label-text">
+              Subject
+            </label>
+            <input
+              type="text"
+              placeholder="email"
+              id="email"
+              name="email"
+              className="input input-bordered rounded-none w-full"
+              autoComplete="email"
+              {...register("email", {
+                required: true,
+                pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
+              })}
+            />
+            {errors.email && (
+              <span className="text-red-500 text-base mt-1">
+                Please enter a valid email address.
+              </span>
+            )}
+          </div>
+          <div className="form-control mt-2">
+            <label htmlFor="email" className="label label-text">
+              Message
+            </label>
+            <input
+              type="text"
+              placeholder="email"
+              id="email"
+              name="email"
+              className="input input-bordered rounded-none w-full"
+              autoComplete="email"
+              {...register("email", {
+                required: true,
+                pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
+              })}
+            />
+            {errors.email && (
+              <span className="text-red-500 text-base mt-1">
+                Please enter a valid email address.
+              </span>
+            )}
+          </div>
+
+          <button className="button7 b7 mt-10 text-white" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div
+        className="lg:hidden block bg-[#C2A74E]"
         style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}>
         {" "}
         <form onSubmit={handleSubmit(onSubmit)} className="px-10 py-14">
