@@ -8,6 +8,9 @@ import FeaturedProduct from "./FeaturedProduct";
 import Testimonials from "./Testimonials";
 import ImageGallery from "./ImageGallery";
 import CompanyLogo from "./CompanyLogo";
+import WhyChoose from "./WhyChoose";
+import PricingPlan from "./PricingPlan";
+import ContactUs from "./ ContactUs";
 
 const Home = () => {
   return (
@@ -21,6 +24,9 @@ const Home = () => {
       <Testimonials />
       <ImageGallery />
       <CompanyLogo />
+      <WhyChoose />
+      <PricingPlan />
+      <ContactUs />
     </div>
   );
 };
