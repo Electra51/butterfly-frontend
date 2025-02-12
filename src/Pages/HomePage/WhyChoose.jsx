@@ -7,9 +7,6 @@ const WhyChoose = () => {
       <div className="text-white text-justify relative mt-[180px] max-w-[19rem] lg:max-w-6xl mx-auto hidden lg:block">
         <div className="bg-[#C2A74E] max-w-full lg:max-w-[900px]">
           <div className="max-w-[18rem] lg:max-w-lg pl-24 py-14 mr-auto">
-            {/* <p className="text-white tracking-[1px] text-[14px] font-medium">
-              Our Benefit
-            </p> */}
             <SubHeader title={"Our Benefit"} fsize={16} color={"#fff"} />
             <p className="text-4xl mt-1 font-bold text-white tracking-[0.2rem]">
               Why Choose Us?

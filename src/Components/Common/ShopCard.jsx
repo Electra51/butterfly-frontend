@@ -2,35 +2,24 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegEye, FaRegHeart, FaStar } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../Redux/cartSlice";
 const ShopCard = ({ product }) => {
-  //   const { addItemToCart, cart } = useContext(CartContext);
-  //   console.log("product", cart.cartItems);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const isAdded = cartItems.some((item) => item._id == product._id); // Check if product is already in the cart
 
-  const inStock = product?.stock >= 1;
-  //   const addToCardHandler = () => {
-  //     addItemToCart({
-  //       product: product._id,
-  //       name: product?.name,
-  //       img: product.img[0].img1st,
-  //       stock: product?.stock,
-  //       rating: product?.rating,
-  //       price: product?.price,
-  //     });
-  //     // Swal.fire({
-  //     //   position: "top-end",
-  //     //   icon: "success",
-  //     //   title: `added to your cart`,
-  //     //   showConfirmButton: false,
-  //     //   timer: 1500,
-  //     // });
-  //   };
+  const handleAddToCart = () => {
+    const isProductInCart = cartItems.some((item) => item._id == product._id); // Check if product is already in the cart
+    if (!isProductInCart) {
+      dispatch(addToCart(product)); // Only add if it's not already in the cart
+    }
+  };
 
-  console.log("product", product);
   return (
     <PhotoProvider>
       <div
-        // className="w-80 h-96 bg-base-100 shadow-xl relative mt-2 overflow-y-hidden"
         className="group bg-base-100 shadow-xl transform group-hover:-translate-y-1 duration-300 relative"
         style={{
           boxShadow: "rgb(193 165 73 / 44%) 0px 7px 29px 0px",
@@ -41,12 +30,13 @@ const ShopCard = ({ product }) => {
         <div
           className="invisible group-hover:visible absolute bottom-[50%] left-2"
           style={{ zIndex: 1 }}>
-          <button className="bg-[#c2a74e] text-white p-2" disabled={!inStock}>
-            {/* <Link href={`/services/${product._id}`}> */}
-            <AiOutlineShoppingCart
-            //   onClick={addToCardHandler}
-            />
-            {/* </Link> */}
+          <button
+            className={`bg-[#c2a74e] text-white p-2 ${
+              isAdded ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            onClick={handleAddToCart}
+            disabled={isAdded}>
+            <AiOutlineShoppingCart />
           </button>
 
           <div className="bg-[#c2a74e] text-white p-2 mt-1">
@@ -80,14 +70,11 @@ const ShopCard = ({ product }) => {
               <p className="text-[18px]">{product?.product_name}</p>
             )}
             <div className="flex justify-between items-center">
-              {/* <div className="flex align-middle justify-items-center">
-              <Star ratingPoint={product?.rating} />
-            </div> */}
               <p className="font-semibold text-[#aa9d28fd] text-[14px]">
                 Price: $ {product?.price}
               </p>
 
-              {!inStock ? (
+              {/* {!inStock ? (
                 <div className="badge bg-red-600 text-white text-[12px]">
                   Out of Stock
                 </div>
@@ -95,7 +82,7 @@ const ShopCard = ({ product }) => {
                 <div className="badge bg-green-600 text-white text-[11px]">
                   In Stock
                 </div>
-              )}
+              )} */}
             </div>
             <Link to={`/shop/${product?._id}`}>
               <button className="buttonNLog1 bNLog1">View Details</button>
@@ -107,8 +94,6 @@ const ShopCard = ({ product }) => {
           ) : (
             <p className="text-[14px]">{description}</p>
           )} */}
-
-          {/* <AddToCardBtn id={product._id} /> */}
         </div>
       </div>
     </PhotoProvider>

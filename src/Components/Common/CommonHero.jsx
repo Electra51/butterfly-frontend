@@ -4,6 +4,7 @@ import imgforAbout from "../../assets/bannerLogo/contact-banner.jpg";
 import imgforContact from "../../assets/bannerLogo/contacts-page.jpg";
 import imgforService from "../../assets/bannerLogo/serviceBanner.jpg";
 import imgforBooking from "../../assets/bannerLogo/BookingBanner.jpg";
+import imgforCart from "../../assets/bannerLogo/CartBanner.jpeg";
 
 const CommonHero = ({ type, title }) => {
   const backgroundImage =
@@ -15,6 +16,8 @@ const CommonHero = ({ type, title }) => {
       ? imgforService
       : type === "booking"
       ? imgforBooking
+      : type === "cart"
+      ? imgforCart
       : null;
 
   return (
@@ -41,6 +44,8 @@ const CommonHero = ({ type, title }) => {
                 ? "Services"
                 : type === "booking"
                 ? "Booking Appointment"
+                : type === "cart"
+                ? "Cart"
                 : ""
             }
             link={
@@ -52,6 +57,8 @@ const CommonHero = ({ type, title }) => {
                 ? "/services"
                 : type === "booking"
                 ? "/booking"
+                : type === "cart"
+                ? "/cart"
                 : "/"
             }
           />

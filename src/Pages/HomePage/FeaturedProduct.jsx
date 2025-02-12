@@ -27,7 +27,7 @@ const FeaturedProduct = () => {
       subHeaderTitle={"Exclusives"}
       HeaderTitle={"Featured Products"}>
       <div className="px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-14 px-0">
           {allProduct?.map((e, i) => (
             <ShopCard product={e} key={i} />
           ))}

@@ -10,12 +10,13 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { TbLogout } from "react-icons/tb";
 import useLogout from "../utils/authUtils";
 import { userData } from "../utils/userDatafromLocalStorageUtils";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const handleLogout = useLogout();
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
   useEffect(() => {
     const changeNavbarbg = () => {
       if (window.scrollY >= 80) {
@@ -69,39 +70,17 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="dropdown-end dropdown mt-5 lg:mt-2 px-2 mx-auto lg:mx-auto">
+          <Link to="/cart" className="mt-5 lg:mt-2 px-2 mx-auto lg:mx-auto">
             <label tabIndex={0} className="mx-2 mt-1">
               <div className="indicator">
                 <span className="pr-1 lg:hidden flex">Cart</span>
                 <AiOutlineShoppingCart className="cursor-pointer text-[22px] font-medium" />
                 <span className="badge badge-sm indicator-item bg-red-500 text-white dark:text-gray-300">
-                  60
+                  <span>({cartItems.length})</span>
                 </span>
               </div>
             </label>
-            <div
-              tabIndex={0}
-              className="dropdown-content card-compact mt-3 w-72 bg-base-100 relative"
-              style={{ boxShadow: "rgb(193 165 73 / 44%) 0px 7px 29px 0px" }}>
-              <div className="card-body overflow-hidden h-96">
-                <span className="text-[16px] font-bold text-black text-center border-b">
-                  5
-                </span>
-
-                <div className="card-action absolute bottom-2 right-4 left-4">
-                  <div className="flex justify-center items-center w-24 ml-20 pb-2 text-[16px] font-bold text-black">
-                    <p>Total:</p>
-                  </div>
-
-                  <Link href="/cart" className="block w-full">
-                    <button className="bg-[#C2A74E] px-2 py-1 w-full">
-                      View cart
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          </Link>
 
           {userData ? (
             <div className="flex justify-center lg:justify-normal items-start gap-1 px-2 mt-5 lg:mt-0">

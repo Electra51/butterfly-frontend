@@ -20,6 +20,7 @@ import ProductCategory from "../Pages/DashboardPage/ProductCategoryPage/ProductC
 import AddProductCategory from "../Pages/DashboardPage/ProductCategoryPage/AddProductCategory";
 import AddProduct from "../Pages/DashboardPage/AddProductPage/AddProduct";
 import DashboardProductPage from "../Pages/DashboardPage/ProductPage/DashboardProductPage";
+import CartPage from "../Pages/CartPage/CartPage";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
       },
       {
         path: "/contact",

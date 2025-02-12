@@ -3,10 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PrimeReactProvider>
-      <App />
-    </PrimeReactProvider>
+    <Provider store={store}>
+      {" "}
+      <PrimeReactProvider>
+        <App />
+      </PrimeReactProvider>
+    </Provider>
   </StrictMode>
 );
