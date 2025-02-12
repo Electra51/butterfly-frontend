@@ -2,6 +2,7 @@ import { MdPhoneInTalk } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
+import SubHeader from "../../Components/Common/SubHeader";
 const ContactUs = () => {
   const {
     register,
@@ -17,10 +18,8 @@ const ContactUs = () => {
       <div className="care max-w-6xl relative">
         <div className="overlay overlay_2">
           <div className="max-w-md lg:max-w-lg px-5 py-20 mx-auto">
-            <p className="text-white mb-2 font-medium text-[14px]">
-              Contact With Us
-            </p>
-            <p className="text-4xl mt-1 font-bold text-white tracking-[0.2rem]">
+            <SubHeader title={"Contact With Us"} fsize={16} color={"#fff"} />
+            <p className="text-4xl mt-1 font-bold text-white tracking-[0.1rem]">
               Get in Touch !
             </p>
 

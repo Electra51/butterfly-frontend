@@ -1,6 +1,4 @@
 import PhotoAlbum from "react-photo-album";
-import { SlideshowLightbox } from "lightbox.js-react";
-import { initLightboxJS } from "lightbox.js-react";
 import gallaryImage1 from "../../assets/GallaryImage/images0.jpg";
 import gallaryImage2 from "../../assets/GallaryImage/images1.jpg";
 import gallaryImage3 from "../../assets/GallaryImage/images2.jpg";
@@ -14,6 +12,7 @@ import gallaryImage10 from "../../assets/GallaryImage/images9.jpg";
 import gallaryImage11 from "../../assets/GallaryImage/images10.jpg";
 import gallaryImage12 from "../../assets/GallaryImage/images11.jpg";
 import gallaryImage13 from "../../assets/GallaryImage/images12.jpg";
+import SectionWrapper from "../../Components/Common/SectionWrapper";
 
 const ImageGallery = () => {
   const photos = [
@@ -32,16 +31,11 @@ const ImageGallery = () => {
     { src: gallaryImage13, width: 1080, height: 1020 },
   ];
   return (
-    <div className="mt-32 max-w-[20rem] lg:max-w-6xl mx-auto">
-      <div className="flex justify-center items-center">
-        <p className="tracking-[0.1rem] text-2xl border-b w-72 lg:w-80 text-center font-bold text-black">
-          Image Gallery
-        </p>
-      </div>
-      <div className="mt-12">
+    <SectionWrapper subHeaderTitle={"Selective"} HeaderTitle={"Image Gallery"}>
+      <div className="px-3">
         <PhotoAlbum layout="columns" photos={photos} />
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

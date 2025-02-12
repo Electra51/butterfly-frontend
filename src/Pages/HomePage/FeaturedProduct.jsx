@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ServiceCard from "../../Components/Common/ServiceCard";
 import { getAllProductData } from "../../utils/productApi";
 import ShopCard from "../../Components/Common/ShopCard";
+import SectionWrapper from "../../Components/Common/SectionWrapper";
 
 const FeaturedProduct = () => {
   const [loading, setLoading] = useState(true);
@@ -22,23 +23,17 @@ const FeaturedProduct = () => {
 
   console.log("allProduct", allProduct);
   return (
-    <div className="mt-32 flex flex-col justify-center max-w-[18rem] lg:max-w-6xl mx-auto">
-      <div className="flex justify-center items-center">
-        <p className="tracking-[0.1rem] text-2xl border-b w-72 lg:w-80 text-center font-bold text-black">
-          Featured Products
-        </p>
+    <SectionWrapper
+      subHeaderTitle={"Exclusives"}
+      HeaderTitle={"Featured Products"}>
+      <div className="px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {allProduct?.map((e, i) => (
+            <ShopCard product={e} key={i} />
+          ))}
+        </div>
       </div>
-      <Link to="/product">
-        <p className="text-center text-[#C2A74E] hover:underline hover:text-blue-500 font-medium cursor-pointer text-[16px] mt-2 w-52 mx-auto">
-          See All Products
-        </p>
-      </Link>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-10">
-        {allProduct?.map((e, i) => (
-          <ShopCard product={e} key={i} />
-        ))}
-      </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

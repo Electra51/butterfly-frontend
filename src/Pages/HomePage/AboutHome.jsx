@@ -2,9 +2,10 @@ import React from "react";
 import aboutImage from "../../assets/bannerLogo/about.png";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 const AboutHome = () => {
   return (
-    <div className="care py-20 bg-fixed mt-[180px]">
+    <div className="care py-36 bg-fixed">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-[19rem] lg:max-w-6xl mx-auto ">
         <div>
           <img

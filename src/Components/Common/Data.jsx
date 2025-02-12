@@ -13,7 +13,9 @@ import {
 import { PiUserListBold } from "react-icons/pi";
 import { RiFileEditLine, RiProductHuntLine } from "react-icons/ri";
 import { TbShoppingCartCopy } from "react-icons/tb";
-
+import exImage1 from "../../assets/company/1.png";
+import exImage2 from "../../assets/company/2.png";
+import exImage3 from "../../assets/company/3.png";
 export const navData = [
   {
     path: "/",
@@ -133,5 +135,176 @@ export const contactInfo = [
     title: "Address",
     icon: MdLocationOn,
     value: "55 East Birchwood Ave. Brooklyn, New York 11201",
+  },
+];
+
+export const pricingplanData = [
+  {
+    id: 1,
+    package_name: "Comfort Relax",
+    price: "$29.99",
+    heading_text: "Improve your look with our professional hairstyling.",
+    services: [
+      {
+        id: 1,
+        name: "Hair Cutting",
+      },
+      {
+        id: 2,
+        name: "Clinical massage",
+      },
+      {
+        id: 3,
+        name: "Updo and Stylings",
+      },
+      {
+        id: 4,
+        name: "Highlightings",
+      },
+      {
+        id: 5,
+        name: "Chemical Peels",
+      },
+      {
+        id: 6,
+        name: "Spa Manicure",
+      },
+      {
+        id: 6,
+        name: "Facials",
+      },
+    ],
+    button_color: "#ec4899",
+  },
+  {
+    id: 2,
+    package_name: "Premium Spa",
+    price: "$39.99",
+    heading_text: "Our manicures and pedicures are expertly.",
+    services: [
+      {
+        id: 1,
+        name: "MicroDreambrasion",
+      },
+      {
+        id: 2,
+        name: "Hair Cutting",
+      },
+      {
+        id: 3,
+        name: "Clinical massage",
+      },
+      {
+        id: 4,
+        name: "Updo and Stylings",
+      },
+      {
+        id: 5,
+        name: "AromaTherapy",
+      },
+      {
+        id: 6,
+        name: "Classic Massage",
+      },
+      {
+        id: 7,
+        name: "Chemical Peels",
+      },
+    ],
+    button_color: "#6d28d9",
+  },
+  {
+    id: 3,
+    package_name: "Luxury Retreat",
+    price: "$49.99",
+    heading_text: "Our manicures and pedicures are expertly carried out ",
+    services: [
+      {
+        id: 1,
+        name: "Hot Stones",
+      },
+      {
+        id: 2,
+        name: "Hand massage",
+      },
+      {
+        id: 3,
+        name: "Padicure Spa",
+      },
+      {
+        id: 4,
+        name: "Aroma Therapy",
+      },
+      {
+        id: 5,
+        name: "Chemical Peels",
+      },
+      {
+        id: 6,
+        name: "Spa Manicure",
+      },
+      {
+        id: 7,
+        name: "Waxing",
+      },
+    ],
+    button_color: "#ca8a04",
+  },
+  {
+    id: 4,
+    package_name: "Ultimate Glow",
+    price: "$59.99",
+    heading_text: "Achieve a stunning look with our premium pakage",
+    services: [
+      {
+        id: 1,
+        name: "Facial Treatments",
+      },
+      {
+        id: 2,
+        name: "Body Scrub",
+      },
+      {
+        id: 3,
+        name: "Anti-Aging",
+      },
+      {
+        id: 4,
+        name: "Tisue Massage",
+      },
+      {
+        id: 5,
+        name: "Luxury Facial",
+      },
+      {
+        id: 6,
+        name: "FullBody Wrap",
+      },
+      {
+        id: 7,
+        name: "Eye Care",
+      },
+    ],
+    button_color: "#0d9488",
+  },
+];
+export const extraFeatureData = [
+  {
+    title: "Aromatherapy",
+    image: exImage1,
+    description:
+      "Experience the soothing power of essential oils to relax your mind and body. Our sessions are designed to reduce stress.",
+  },
+  {
+    title: "Relax",
+    image: exImage2,
+    description:
+      "Escape the hustle & bustle of daily life. Let's create a calming atmosphere where you can enjoy a moment of pure tranquility.",
+  },
+  {
+    title: "Massage",
+    image: exImage3,
+    description:
+      "Relieve tension & restore your body's natural balance with our professional massage services.",
   },
 ];
