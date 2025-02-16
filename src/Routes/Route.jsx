@@ -21,6 +21,7 @@ import AddProductCategory from "../Pages/DashboardPage/ProductCategoryPage/AddPr
 import AddProduct from "../Pages/DashboardPage/AddProductPage/AddProduct";
 import DashboardProductPage from "../Pages/DashboardPage/ProductPage/DashboardProductPage";
 import CartPage from "../Pages/CartPage/CartPage";
+import Checkout from "../Pages/CheckoutPage/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartPage />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
       {
         path: "/contact",

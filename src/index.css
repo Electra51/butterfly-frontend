@@ -306,6 +306,10 @@ button {
   margin-left: 312px !important;
   overflow: hidden !important;
 } */
+
+.p-dialog-mask {
+  background-color: #3f3f3ea7 !important;
+}
 @media screen and (min-width: 390px) {
   .button {
     height: 35px;
