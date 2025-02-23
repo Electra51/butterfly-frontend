@@ -10,18 +10,17 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import Dashboard from "../Pages/DashboardPage/Dashboard";
 import Category from "../Pages/DashboardPage/CategoryPage/Category";
 import AddService from "../Pages/DashboardPage/ServicePage/AddService";
-import NewPage from "../Pages/DashboardPage/ServicePage/NewPage";
 import DashboardService from "../Pages/DashboardPage/ServicePage/DashboardService";
 import BookingPerService from "../Pages/ServicesPage/BookingPerService";
 import Profile from "../Pages/DashboardPage/ProfilePage/Profile";
 import Reservation from "../Pages/DashboardPage/ReservationPage/Reservation";
 import Setting from "../Pages/DashboardPage/SettingPage/Setting";
 import ProductCategory from "../Pages/DashboardPage/ProductCategoryPage/ProductCategory";
-import AddProductCategory from "../Pages/DashboardPage/ProductCategoryPage/AddProductCategory";
 import AddProduct from "../Pages/DashboardPage/AddProductPage/AddProduct";
 import DashboardProductPage from "../Pages/DashboardPage/ProductPage/DashboardProductPage";
 import CartPage from "../Pages/CartPage/CartPage";
 import Checkout from "../Pages/CheckoutPage/Checkout";
+import Order from "../Pages/OrderPage/Order";
 
 export const router = createBrowserRouter([
   {
@@ -73,8 +72,11 @@ export const router = createBrowserRouter([
         element: <Category />,
       },
       {
+        path: "/dashboard/orders",
+        element: <Order />,
+      },
+      {
         path: "/dashboard/service-add",
-        // element: <NewPage />,
         element: <AddService />,
       },
       {
@@ -93,7 +95,6 @@ export const router = createBrowserRouter([
         path: "/dashboard/products",
         element: <DashboardProductPage />,
       },
-
       {
         path: "/dashboard/profile",
         element: <Profile />,

@@ -37,7 +37,14 @@ const CartPage = () => {
   const getTotalProducts = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
-  const shippingCharge = 6;
+  // Calculate Total Products (Sum of all item quantities)
+  function calculateTotalShipping(items) {
+    return items?.reduce(
+      (total, item) => total + item.quantity * (item.shipping_charge || 0),
+      0
+    );
+  }
+
   return (
     <div>
       <CommonHero type={"cart"} title={"Your Cart"} />
@@ -125,7 +132,7 @@ const CartPage = () => {
             </div>
             <div className="flex justify-between items-center">
               <p>Shipping charge</p>
-              <p>${shippingCharge}</p>
+              <p>${calculateTotalShipping(cartItems)}</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Total Item</p>
@@ -144,10 +151,7 @@ const CartPage = () => {
 
             <div className="mt-6 text-center">
               <Link to={"/checkout"}>
-                <button
-                  className="bg-[#c2a74e] text-white py-2 px-6  text-[14px]"
-                  // onClick={() => setVisible(true)}
-                >
+                <button className="bg-[#c2a74e] text-white py-2 px-6  text-[14px]">
                   Checkout
                 </button>
               </Link>

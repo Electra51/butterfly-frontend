@@ -6,111 +6,6 @@ import { MdOutlineFileUpload } from "react-icons/md";
 import toast from "react-hot-toast";
 
 const AddProduct = () => {
-  // const [loading, setLoading] = useState(true);
-  // const [productCategories, setProductCategories] = useState([]);
-  // const [detailImage, setDetailImage] = useState(null);
-  // const [detail, setDetail] = useState([{ id: "", img1st: null }]);
-  // const [tagList, setTagList] = useState("");
-  // const [brand, setBrand] = useState("");
-  // const [itemWeight, setItemWeight] = useState("");
-  // const [material, setMaterial] = useState("");
-  // const [details, setDetails] = useState("");
-  // const [stock, setStock] = useState("");
-  // const [price, setPrice] = useState("");
-  // const [productName, setProductName] = useState("");
-  // const [productCategory, setProductCategory] = useState("");
-
-  // const getProductCategoryData = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.get(
-  //       `${import.meta.env.VITE_API_URL}/product-category/categories`
-  //     );
-  //     if (response.status === 200) {
-  //       setProductCategories(response.data);
-  //     } else {
-  //       console.error("Failed to fetch categories");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getProductCategoryData();
-  // }, []);
-
-  // const onDrop = useCallback((acceptedFiles, index) => {
-  //   const file = acceptedFiles[0];
-  //   setDetailImage(file);
-  //   setDetail((prevDetail) => {
-  //     const updatedDetail = [...prevDetail];
-  //     updatedDetail[index].img = file;
-  //     return updatedDetail;
-  //   });
-  // }, []);
-
-  // const { getRootProps, getInputProps } = useDropzone({
-  //   onDrop: (acceptedFiles) => onDrop(acceptedFiles, detail.length - 1), // Assign to the last index
-  // });
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const updatedDetails = await Promise.all(
-  //       detail.map(async (detailItem) => {
-  //         let imageUrlforDetail = "";
-
-  //         if (detailItem.img1st) {
-  //           const imageFormData = new FormData();
-  //           imageFormData.append("image", detailItem.img1st);
-
-  //           const imageUploadResponse = await axios.post(
-  //             `${import.meta.env.VITE_API_URL}/service/upload-image`,
-  //             imageFormData,
-  //             { headers: { "Content-Type": "multipart/form-data" } }
-  //           );
-  //           imageUrlforDetail = imageUploadResponse.data.url;
-  //         }
-
-  //         return {
-  //           id: detailItem.id || new Date().getTime().toString(),
-  //           img1st: imageUrlforDetail,
-  //         }; // Assign a unique ID if not present
-  //       })
-  //     );
-
-  //     const product = {
-  //       product_name: productName,
-  //       stock,
-  //       img: updatedDetails,
-  //       product_category: productCategory,
-  //       price,
-  //       tag_list: tagList.split(",").map((tag) => tag.trim()),
-  //       brand,
-  //       item_weight: itemWeight,
-  //       material,
-  //       details,
-  //     };
-
-  //     const response = await axios.post(
-  //       "http://localhost:8080/api/v1/product/product-add",
-  //       product
-  //     );
-  //     if (response.data.success) {
-  //       toast.success(response.data.message);
-  //     } else {
-  //       toast.error(response.data.message);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error adding product:", error);
-  //     toast.error("Error adding product");
-  //   }
-  // };
-  // console.log("first", detailImage);
-
   const [loading, setLoading] = useState(true);
   const [productCategories, setProductCategories] = useState([]);
   const [detail, setDetail] = useState([]);
@@ -122,6 +17,7 @@ const AddProduct = () => {
   const [stock, setStock] = useState("");
   const [price, setPrice] = useState("");
   const [productName, setProductName] = useState("");
+  const [shippingCharge, setShippingCharge] = useState("");
   const [productCategory, setProductCategory] = useState("");
 
   const getProductCategoryData = async () => {
@@ -147,16 +43,15 @@ const AddProduct = () => {
   }, []);
 
   const onDrop = useCallback((acceptedFiles, index) => {
-    const file = acceptedFiles[0]; // Get the first file
+    const file = acceptedFiles[0];
     console.log("onDrop file:", file, "index:", index);
 
     setDetail((prevDetail) => {
       const updatedDetail = [...prevDetail];
-      // Create a temporary URL for local preview
       updatedDetail[index] = {
         ...updatedDetail[index],
-        img: file, // Store the file object for preview
-        tempImageUrl: URL.createObjectURL(file), // Store temporary URL
+        img: file,
+        tempImageUrl: URL.createObjectURL(file),
       };
       return updatedDetail;
     });
@@ -164,16 +59,14 @@ const AddProduct = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      // Assuming you only want to drop on the last one. Adjust logic if you want dropping on any detail
       if (detail.length > 0) {
         onDrop(acceptedFiles, detail.length - 1);
       } else {
-        // Optionally handle case where there are no detail sections yet.
         console.warn("No detail section to drop onto.");
-        toast.warn("Add a detail section first!"); // Provide user feedback
+        toast.warn("Add a detail section first!");
       }
     },
-    multiple: false, // Only accept one file
+    multiple: false,
   });
 
   const handleAddDetail = () => {
@@ -192,16 +85,15 @@ const AddProduct = () => {
           let imageUrlforDetail = "";
 
           if (detailItem.img) {
-            // Only upload if an image has been selected
             const imageFormData = new FormData();
-            imageFormData.append("image", detailItem.img); // Append the file object
+            imageFormData.append("image", detailItem.img);
 
             const imageUploadResponse = await axios.post(
               `${import.meta.env.VITE_API_URL}/service/upload-image`,
               imageFormData,
               { headers: { "Content-Type": "multipart/form-data" } }
             );
-            imageUrlforDetail = imageUploadResponse.data.url; // Get the URL from the response
+            imageUrlforDetail = imageUploadResponse.data.url;
           }
 
           return {
@@ -222,6 +114,7 @@ const AddProduct = () => {
         item_weight: itemWeight,
         material,
         details,
+        shipping_charge: shippingCharge,
       };
 
       const response = await axios.post(
@@ -285,6 +178,15 @@ const AddProduct = () => {
                 value={stock}
                 onChange={(e) => setStock(e.target.value)}
                 placeholder="Stock"
+                required
+              />
+              <input
+                className="px-2 py-1.5 border text-[14px] placeholder:text-[14px]"
+                type="number"
+                name="shipping_charge"
+                value={shippingCharge}
+                onChange={(e) => setShippingCharge(e.target.value)}
+                placeholder="Shipping Charge"
                 required
               />
               <input
