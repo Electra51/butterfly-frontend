@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { useDropzone } from "react-dropzone";
@@ -56,7 +56,7 @@ const AddService = () => {
 
   // Move the hook outside the map function
   const { getRootProps, getInputProps } = useDropzone({
-    onDrop: (acceptedFiles) => {
+    onDrop: () => {
       // Handle file upload dynamically later
     },
   });
@@ -138,6 +138,19 @@ const AddService = () => {
         servicesData
       );
       toast.success("Service added successfully!");
+      setName("");
+      setAvailability("");
+      setDiscount("");
+      setCategory("");
+      setPrice("");
+      setTag([]);
+      setStatus([]);
+      setIconImage(null);
+      setDetailImage(null);
+      setDetail([{ question1: "", ans1: "", img: "" }]);
+      setMaterial([]);
+      setWorksHow([{ headline: "", details: "" }]);
+      setPricePerTime([{ time: "", budget: "" }]);
       console.log(response.data);
     } catch (error) {
       console.error(error);

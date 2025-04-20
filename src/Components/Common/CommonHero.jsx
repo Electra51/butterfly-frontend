@@ -1,10 +1,11 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import BreadCrumb from "./BreadCrumb";
 import imgforAbout from "../../assets/bannerLogo/contact-banner.jpg";
 import imgforContact from "../../assets/bannerLogo/contacts-page.jpg";
 import imgforService from "../../assets/bannerLogo/serviceBanner.jpg";
 import imgforBooking from "../../assets/bannerLogo/BookingBanner.jpg";
 import imgforCart from "../../assets/bannerLogo/CartBanner.jpeg";
+import imgforShop from "../../assets/bannerLogo/image00.png";
 
 const CommonHero = ({ type, title }) => {
   const backgroundImage =
@@ -18,13 +19,19 @@ const CommonHero = ({ type, title }) => {
       ? imgforBooking
       : type === "cart"
       ? imgforCart
+      : type === "shop"
+      ? imgforShop
       : null;
 
   return (
     <div
       className="hero h-[430px] lg:h-[460px] bg-fixed"
       style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage})`
+          : // : newImg
+            // ? `url(${newImg})`
+            "none",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
@@ -42,6 +49,8 @@ const CommonHero = ({ type, title }) => {
                 ? "Contact"
                 : type === "services"
                 ? "Services"
+                : type === "shop"
+                ? "Shop"
                 : type === "booking"
                 ? "Booking Appointment"
                 : type === "cart"

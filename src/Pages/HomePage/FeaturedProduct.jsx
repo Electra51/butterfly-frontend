@@ -1,12 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import ServiceCard from "../../Components/Common/ServiceCard";
+import { useEffect, useState } from "react";
 import { getAllProductData } from "../../utils/productApi";
 import ShopCard from "../../Components/Common/ShopCard";
 import SectionWrapper from "../../Components/Common/SectionWrapper";
 
 const FeaturedProduct = () => {
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const [allProduct, setAllProduct] = useState([]);
 

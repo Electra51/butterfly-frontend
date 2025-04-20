@@ -1,11 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import ServiceCard from "../../Components/Common/ServiceCard";
-import SubHeader from "../../Components/Common/SubHeader";
 import SectionWrapper from "../../Components/Common/SectionWrapper";
 
 const FeaturedService = () => {
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const [featuredService, setFeaturedService] = useState([]);
   const getAllServiceData = async () => {
@@ -17,7 +16,7 @@ const FeaturedService = () => {
 
       if (response.status === 200) {
         const filterService = response.data?.filter(
-          (e, i) => e?.status[0] == "Featured"
+          (e) => e?.status[0] == "Featured"
         );
         setFeaturedService(filterService);
       } else {

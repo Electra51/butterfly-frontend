@@ -21,6 +21,8 @@ import DashboardProductPage from "../Pages/DashboardPage/ProductPage/DashboardPr
 import CartPage from "../Pages/CartPage/CartPage";
 import Checkout from "../Pages/CheckoutPage/Checkout";
 import Order from "../Pages/OrderPage/Order";
+import EachServiceDetail from "../Pages/ServicesPage/EachServiceDetail";
+import ShopPage from "../Pages/ShopPage/ShopPage";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
+      },
+      {
+        path: "/services/:id",
+        element: <EachServiceDetail />,
       },
       {
         path: "/bookings/:id",
